@@ -1,0 +1,87 @@
+﻿@model IEnumerable<User>
+@*
+    
+*@
+@{
+    ViewData["Title"] = "Forbidden";
+}
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Vorname
+            </th>
+            <th>
+                Nachname
+            </th>
+            <th>
+                Geburtsdatum
+            </th>
+            <th>
+                Adresse
+            </th>
+            <th>
+                Hausnummer
+            </th>
+            <th>
+                PLZ
+            </th>
+            <th>
+                Ort
+            </th>
+            <th>
+                Username
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Kennwort
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td>
+                    @obj.Id
+                </td>
+                <td>
+                    @obj.Vorname
+                </td>
+                <td>
+                    @obj.Nachname
+                </td>
+                <td>
+                    @obj.Geburtsdatum
+                </td>
+                <td>
+                    @obj.Adresse
+                </td>
+                <td>
+                    @obj.Hausnummer
+                </td>
+                <td>
+                    @obj.Plz
+                </td>
+                <td>
+                    @obj.Ort
+                </td>
+                <td>
+                    @obj.Username
+                </td>
+                <td>
+                    @obj.Email
+                </td>
+                <td>
+                    @obj.Kennwort
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

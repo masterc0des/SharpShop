@@ -1,0 +1,50 @@
+﻿MVC Architecture:
+
+Model:
+Represents the shape of the Data. A class in C# is used to describe the model.
+The class in C# represents the table in the Database.
+
+View:
+Represents the user interface. The view determines how the display and data is
+displayed.
+
+Controller:
+Handles the user request and acts as an interface between Model and View to
+process all the business logic and it manipulates data using the model and 
+interacts with the view to render the proper output.
+
+1. Client request to Controller
+2. Controller posts data from the model
+3. Model processes the data
+4. Model returns the processed data to the controller
+5. Controller posts data to the view 
+6. The view creates the proper view for the client
+7. The view returns the presentation to the controller
+8. The Controller returns the response to the client
+
+
+Routing in MVC:
+
+The URL pattern for routing is considered after the domain name.
+https://localhost:55555/Category/Index/3
+https://localhost:55555/{controller}/{action}/{id}
+
++-----------------------------------------------------------------------------------+
+| URL											Controller		Action		Id		|
++-----------------------------------------------------------------------------------+
+| https://localhost:55555/Category/Index		Category		Index		Null	|
+| https://localhost:55555/Category				Category		Index		Null	|
+| https://localhost:55555/Category/Edit/3		Category		Edit		3		|
+| https://localhost:55555/Producr/Details/3		Product			Details		3		|
++-----------------------------------------------------------------------------------+
+
+Id is an optional route, controller and action are not optional.
+If they are not definded, they will be automatically assigned to a default value.
+
+The "shared" folder is used for partial views (header and footer).
+
+To create a migration (... a class with methods that create the table):
+add-migration AddUsersToDatabase
+
+To push the migration to database
+update-database
